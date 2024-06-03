@@ -33,19 +33,24 @@ export class AppComponent {
   contatos: Contato[] = agenda;
   filtraPorTexto: string = '';
 
+  removeAcentos(texto: string): string {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
   filtraContatoPorTexto(): Contato[] {
     if (!this.filtraPorTexto) {
       return this.contatos;
     }
     return this.contatos.filter((contato) => {
-      return contato.nome
+      return this.removeAcentos(contato.nome)
         .toLowerCase()
-        .includes(this.filtraPorTexto.toLowerCase());
+        .includes(this.removeAcentos(this.filtraPorTexto).toLowerCase());
     });
   }
   filtrarContatosPorLetraInicial(letra: string): Contato[] {
     return this.filtraContatoPorTexto().filter((contato) => {
-      return contato.nome.toLowerCase().startsWith(letra);
+      return this.removeAcentos(contato.nome)
+        .toLowerCase()
+        .startsWith(this.removeAcentos(letra).toLowerCase());
     });
   }
 }
