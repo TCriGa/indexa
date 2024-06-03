@@ -11,7 +11,8 @@ interface Contato {
   telefone: string;
 }
 
-import agenda from './agenda.json'
+import agenda from './agenda.json';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -24,14 +25,27 @@ import agenda from './agenda.json'
     CabecalhoComponent,
     SeparadorComponent,
     ContatoComponent,
+    FormsModule,
   ],
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
   contatos: Contato[] = agenda;
-  filtrarContatosPorLetraInicial(letra:string) : Contato[] {
-    return this.contatos.filter( contato => {
-      return contato.nome.toLowerCase().startsWith(letra)
-    } )
+  filtraPorTexto: string = '';
+
+  filtraContatoPorTexto(): Contato[] {
+    if (!this.filtraPorTexto) {
+      return this.contatos;
+    }
+    return this.contatos.filter((contato) => {
+      return contato.nome
+        .toLowerCase()
+        .includes(this.filtraPorTexto.toLowerCase());
+    });
+  }
+  filtrarContatosPorLetraInicial(letra: string): Contato[] {
+    return this.filtraContatoPorTexto().filter((contato) => {
+      return contato.nome.toLowerCase().startsWith(letra);
+    });
   }
 }
