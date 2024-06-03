@@ -1,6 +1,4 @@
-![Image](https://github.com/users/TCriGa/projects/5/assets/90049866/7a1caefd-f5db-443d-8e48-c8824b021d1d)
-
-
+![Indexa](https://github.com/TCriGa/indexa/assets/90049866/da42116e-7be4-4d44-9437-01db59a0afd4)
 
 ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 
