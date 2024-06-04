@@ -13,6 +13,7 @@ interface Contato {
 
 import agenda from './agenda.json';
 import { FormsModule } from '@angular/forms';
+import { FormContatoComponent } from './page/form-contato/form-contato.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     SeparadorComponent,
     ContatoComponent,
     FormsModule,
+    FormContatoComponent,
   ],
 })
 export class AppComponent {
