@@ -7,13 +7,19 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-form-contato',
   standalone: true,
   templateUrl: './form-contato.component.html',
   styleUrl: './form-contato.component.css',
-  imports: [ContainerComponent, SeparadorComponent, ReactiveFormsModule],
+  imports: [
+    ContainerComponent,
+    SeparadorComponent,
+    ReactiveFormsModule,
+    NgClass,
+  ],
 })
 export class FormContatoComponent {
   contatoForm!: FormGroup;
@@ -29,9 +35,7 @@ export class FormContatoComponent {
     });
   }
   salvarContato() {
-    if (this.contatoForm.valid) {
-      console.log(this.contatoForm.value);
-    }
+    console.log(this.contatoForm.value);
   }
   cancelar() {
     console.log('cancelado');
