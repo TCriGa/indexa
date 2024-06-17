@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-form-contato',
@@ -19,6 +20,7 @@ import { NgClass } from '@angular/common';
     SeparadorComponent,
     ReactiveFormsModule,
     NgClass,
+    RouterLink,
   ],
 })
 export class FormContatoComponent {
