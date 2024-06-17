@@ -11,8 +11,8 @@ interface Contato {
   telefone: string;
 }
 
-import agenda from '../../agenda.json';
 import { RouterLink } from '@angular/router';
+import { ContatoService } from '../../services/contato.service';
 
 @Component({
   selector: 'app-lista-contatos',
@@ -30,9 +30,12 @@ import { RouterLink } from '@angular/router';
 })
 export class ListaContatosComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contato[] = agenda;
+  contatos: Contato[] = [];
   filtraPorTexto: string = '';
 
+  constructor(private contatoService: ContatoService) {
+    this.contatos = this.contatoService.obterContatos();
+  }
   removeAcentos(texto: string): string {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
