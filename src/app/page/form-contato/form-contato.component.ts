@@ -26,7 +26,11 @@ import { RouterLink } from '@angular/router';
 export class FormContatoComponent {
   contatoForm!: FormGroup;
 
-  constructor() {
+  ngOnInit() {
+    this.inicializarForm();
+  }
+
+  inicializarForm() {
     this.contatoForm = new FormGroup({
       nome: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),

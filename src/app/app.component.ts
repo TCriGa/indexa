@@ -8,11 +8,6 @@ import { ListaContatosComponent } from './page/lista-contatos/lista-contatos.com
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [
-    RouterOutlet,
-    FormContatoComponent,
-    FormContatoComponent,
-    ListaContatosComponent,
-  ],
+  imports: [RouterOutlet, FormContatoComponent, ListaContatosComponent],
 })
 export class AppComponent {}

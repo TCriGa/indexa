@@ -9,7 +9,7 @@
 .contato ul li {
   list-style: none;
   color: #212529;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -17,7 +17,7 @@
 }
 
 .contato ul li button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

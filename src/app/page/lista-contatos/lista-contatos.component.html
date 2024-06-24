@@ -3,14 +3,14 @@
 
   <input
     type="search"
-    placeholder="Digite para continuar"
+    placeholder="Digite para buscar"
     [(ngModel)]="filtraPorTexto"
   />
 
   <section class="adicionar-contato">
     <button routerLink="/forms">
       <img src="./assets/plus.png" alt="" />
-      <span> Adicionar Contato </span>
+      <span>Adicionar contato</span>
     </button>
   </section>
 
@@ -18,10 +18,10 @@
   <app-separador>
     {{ letra }}
   </app-separador>
-  @for(contato of filtrarContatosPorLetraInicial(letra); track contato.id) {
+  @for (contato of filtrarContatosPorLetraInicial(letra); track contato.id) {
   <app-contato
     [nome]="contato.nome"
     [telefone]="contato.telefone"
   ></app-contato>
-  }}
+  } }
 </app-container>
