@@ -12,6 +12,8 @@ import { Contato } from '../../component/contato/contato';
 @Component({
   selector: 'app-lista-contatos',
   standalone: true,
+  templateUrl: './lista-contatos.component.html',
+  styleUrl: './lista-contatos.component.css',
   imports: [
     ContainerComponent,
     CabecalhoComponent,
@@ -20,8 +22,6 @@ import { Contato } from '../../component/contato/contato';
     FormsModule,
     RouterLink,
   ],
-  templateUrl: './lista-contatos.component.html',
-  styleUrl: './lista-contatos.component.css',
 })
 export class ListaContatosComponent implements OnInit {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
