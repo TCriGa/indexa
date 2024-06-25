@@ -10,6 +10,7 @@ import {
 import { NgClass } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
+import { PerfilContatoComponent } from '../perfil-contato/perfil-contato.component';
 
 @Component({
   selector: 'app-form-contato',
@@ -22,6 +23,7 @@ import { ContatoService } from '../../services/contato.service';
     ReactiveFormsModule,
     NgClass,
     RouterLink,
+    PerfilContatoComponent,
   ],
 })
 export class FormContatoComponent implements OnInit {
